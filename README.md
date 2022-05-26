@@ -18,7 +18,7 @@ The application can be divided into 4 users:
   * Can add new comments
   * Can like someone else's posts
   * Can edit and delete their posts and comments
-  * Can search for other users
+  * Can search for other users (elasticsearch)
 * Moderator
   *  Has all the functionality of a registered user
   *  can delete and edit comments of other users
