@@ -14,7 +14,7 @@ The application can be divided into 4 users:
   * It can reset its password
   * It can log on
 * Registered user
-  *ds
+  * Can register
 * Moderator
 * Admin
 
