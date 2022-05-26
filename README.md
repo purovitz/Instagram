@@ -10,7 +10,7 @@ It is a simple instagram clone built using PHP 8  + Symfony 6, MYSQL and HTML + 
 The application can be divided into 4 users:
 
 * Guest
-  * Can register
+  * Can register with email confirmation
   * It can reset its password
   * It can log on
 * Registered user
