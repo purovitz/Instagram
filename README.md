@@ -14,8 +14,12 @@ The application can be divided into 4 users:
   * It can reset its password
   * It can log on
 * Registered user
-  * Can register
+  * Can add new posts
+  * Can add new comments
+  * can like someone else's posts
+  * can edit and delete their posts and comments
 * Moderator
+  * Can add new posts
 * Admin
 
 
