@@ -16,11 +16,14 @@ The application can be divided into 4 users:
 * Registered user
   * Can add new posts
   * Can add new comments
-  * can like someone else's posts
-  * can edit and delete their posts and comments
+  * Can like someone else's posts
+  * Can edit and delete their posts and comments
 * Moderator
-  * Can add new posts
+  *  Has all the functionality of a registered user
+  *  can delete and edit comments of other users
 * Admin
+  *  Has all the functionality of a moderator
+  *  He has access to the management panel (thanks to the easy admin package) in which he can manage all the things on the website
 
 
 ## What did I learn creating it?
