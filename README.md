@@ -21,7 +21,7 @@ The application can be divided into 4 users:
   * Can search for other users (elasticsearch)
 * Moderator
   *  Has all the functionality of a registered user
-  *  can delete and edit comments of other users
+  *  can delete and edit comments of other users (I used the voter system to be able to edit and delete other users' posts)
 * Admin
   *  Has all the functionality of a moderator
   *  He has access to the management panel (thanks to the easy admin package) in which he can manage all the things on the website
