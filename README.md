@@ -3,7 +3,7 @@
 
 ## What is it?
 
-It is a simple instagram clone built using PHP + Symfony, MYSQL and HTML + CSS + Docker.
+It is a simple instagram clone built using PHP 8  + Symfony 6, MYSQL and HTML + CSS + Docker.
 
 ## How it works
 
@@ -14,6 +14,7 @@ The application can be divided into 4 users:
   * It can reset its password
   * It can log on
 * Registered user
+  *ds
 * Moderator
 * Admin
 
