@@ -27,9 +27,6 @@ The application can be divided into 4 users:
   *  He has access to the management panel (thanks to the easy admin package) in which he can manage all the things on the website
 
 
-## What did I learn creating it?
-
-This 
 
 
 ## Things that I would like to improve/add in the future:
