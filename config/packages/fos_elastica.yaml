@@ -1,0 +1,14 @@
+# Read the documentation: https://github.com/FriendsOfSymfony/FOSElasticaBundle/blob/master/doc/setup.md
+fos_elastica:
+    clients:
+        default: { url: http://localhost:9200, host: localhost, port: 9200 }
+    indexes:
+        user:
+            properties:
+                nickname: ~
+                email: ~
+            persistence:
+                driver: orm
+                model: App\Entity\User
+                finder: ~
+                provider: ~

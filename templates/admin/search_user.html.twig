@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PostController!{% endblock %}
+
+
+
+
+
+{% block body %}
+    <br>
+    <div class="container mt-5">
+        <h1 class="mb-5">Wyszukiwarka użytkowników</h1>
+
+        <div class="card shadow-sm mb-5">
+            <div class="card-body">
+                {% for message in app.flashes('success') %}
+                    <div class="alert alert-success">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+
+                {% for message in app.flashes('error') %}
+                    <div class="alert alert-danger">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+
+                {{ form_start(form) }}
+
+                <div class="mb-3">
+                    {{ form_label(form.nickname, null, {'label': 'Podaj nickname użytkownika:', 'label_attr': {'class': 'form-label'}}) }}
+                    {{ form_widget(form.nickname, {'attr': {'class': 'form-control'}}) }}
+                </div>
+
+                <button type="submit" class="btn btn-dark ">Kliknij</button>
+                {{ form_end(form) }}
+
+
+
+                {% for result in results %}
+                    <br>
+                    <hr>
+                    <p>Znaleziono użytkownika:</p>
+                    <a href="{{ path('profile', {'id': result}) }}">{{ result.nickname }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

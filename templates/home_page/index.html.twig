@@ -1,0 +1,59 @@
+
+
+{% block title %}MyStagram{% endblock %}
+
+
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}css/style.css">
+        <link rel="stylesheet" href="{{ asset('assets/css/simpleLightbox.min.css') }}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ asset('assets/css/styleee.css') }}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    {% endblock %}
+
+
+
+{% block body %}
+    <body>
+    <!-- partial:index.partial.html -->
+    <br><br>
+    <br><br>
+    <div class="box-form ">
+        <div class="left">
+            <div class="overlay">
+                <h1>My Stagram</h1>
+                <h1></h1>
+                <p class="text-center">(((My second symfony project)))</p>
+                <span>
+
+    </span>
+            </div>
+        </div>
+
+
+        <div class="right ">
+            <h5></h5>
+            <br><br><br>
+
+            <p>Don't have an account? <a href="{{path('app_register') }}">Creat Your Account</a> it takes less than a minute</p>
+            <br>
+            <br>
+            <br>
+            <p>Already have an account? <a href="{{path('app_login') }}">Sign in!</a> </p>
+
+            <br><br>
+            <br>
+            <p>Forgot password? <a href="{{path('app_forgot_password_request') }}">Reset!</a> </p>
+
+
+        </div>
+
+    </div>
+    <!-- partial -->
+
+    </body>
+{% endblock %}

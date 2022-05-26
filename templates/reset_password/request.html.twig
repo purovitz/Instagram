@@ -1,0 +1,60 @@
+
+{% block title %}Reset your password{% endblock %}
+
+
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}css/style.css">
+        <link rel="stylesheet" href="{{ asset('assets/css/simpleLightbox.min.css') }}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ asset('assets/css/styleee.css') }}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    {% endblock %}
+
+
+
+{% block body %}
+    {% for flash_error in app.flashes('reset_password_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+    <body>
+    <!-- partial:index.partial.html -->
+    <br><br>
+    <br><br>
+    <div class="box-form ">
+        <div class="left">
+            <div class="overlay">
+                <h1>My Stagram</h1>
+                <h1></h1>
+                <p class="text-center">(((My second symfony project)))</p>
+                <span>
+
+    </span>
+            </div>
+        </div>
+
+
+        <div class="right ">
+            <h1>Reset your password</h1>
+            <br><br><br>
+            {{ form_start(requestForm) }}
+            {{ form_row(requestForm.email) }}
+            <div>
+                <small>
+                    Enter your email address and we will send you a
+                    link to reset your password.
+                </small>
+            </div>
+            <br>
+            <button class="btn btn-primary">Send password reset email</button>
+            {{ form_end(requestForm) }}
+        </div>
+
+    </div>
+    <!-- partial -->
+
+    </body>
+{% endblock %}

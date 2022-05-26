@@ -1,0 +1,72 @@
+
+
+{% block title %}Register{% endblock %}
+
+
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}css/style.css">
+        <link rel="stylesheet" href="{{ asset('assets/css/simpleLightbox.min.css') }}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ asset('assets/css/styleee.css') }}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    {% endblock %}
+
+
+{% block body %}
+    {% for flash_error in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+
+
+
+
+
+    <body>
+    <!-- partial:index.partial.html -->
+    <br><br>
+    <br><br>
+    <div class="box-form ">
+        <div class="left">
+            <div class="overlay">
+                <h1>My
+                    Stagrammmm <p></p></h1>
+                <h1></h1>
+                <p class="text-center">(((My second symfony project)))</p>
+                <span>
+
+    </span>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="bg-light mt-5 p-4">
+                <h1 class="bg-light mt-20 p-4 text-center font-family: Arial">Register</h1>
+                {% form_theme registrationForm 'bootstrap_4_layout.html.twig' %}
+                {{ form_start(registrationForm) }}
+                {{ form_row(registrationForm.email) }}
+                {{ form_row(registrationForm.nickname) }}
+                {{ form_row(registrationForm.plainPassword, {
+                    label: 'Password'
+                }) }}
+                {{ form_row(registrationForm.agreeTerms) }}
+
+                <div class="right">
+                    <button>Register</button>
+                </div>
+
+                {{ form_end(registrationForm) }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- partial -->
+
+    </body>
+
+
+{% endblock %}

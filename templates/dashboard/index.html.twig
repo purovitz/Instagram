@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}DashboardGram!{% endblock %}
+
+
+
+
+
+{% block body %}
+{% for flash_success in app.flashes('success') %}
+    <div class="alert alert-success" role="alert">{{ flash_success }}</div>
+{% endfor %}
+
+
+    {% for post in pagination %}
+    <div class="container">
+    <section class="main">
+    <div class="wrapper">
+        <div class="left-col">
+            <br>
+
+            <div class="post">
+                <div class="info">
+                    <div class="user">
+                        <a href="{{ path('profile', {'id': post.user.id}) }}"> <p class="username">{{ post.user.nickname }}</p></a>
+                        {#
+                        <p class="username">{{ post.user.nickname }}</p>
+                        #}
+                    </div>
+                    <img src="{{ asset('assets/img/option.PNG') }}" class="options" alt="">
+                </div>
+
+                <img src="/images/hosting/{{ post.image }}" class="post-image" alt="">
+                <div class="post-content">
+                    <div class="reaction-wrapper">
+                        <a  href="{{ path('app_like_post', {id: post.id }) }}"><img src="{{ asset('assets/img/like.PNG') }}" class="icon" alt=""></a>
+                        <a   href="{{ path('app_show_post', {slug: post.slug }) }}"><img src="{{ asset('assets/img/comment.PNG') }}" class="icon" alt=""></a>
+                        <img src="{{ asset('assets/img/send.PNG') }}" class="icon" alt="">
+                        <img src="{{ asset('assets/img/save.PNG') }}" class="save icon" alt="">
+                    </div>
+                    <p class="likes">{{ post.likes|length > 0 ? post.likes|length : 0 }} likes  </p>
+                    <p class="description"><span>{{ post.user.nickname }} </span> {{ post.content }}</p>
+                    <p class="post-time">{{ post.uploadedAt|date('d.m.Y H:i:s') }}</p>
+                </div>
+                <div class="w3-col m8 s12">
+                    <p><button class="btn btn-light"><b><a   href="{{ path('app_show_post', {slug: post.slug }) }}"> Kliknij aby wyświetlić cały post</a></b></button></p>
+                </div>
+                <div class="comment-wrapper">
+                    <img src="{{ asset('assets/img/smile.PNG') }}" class="icon" alt="">
+                    <input type="text" class="comment-box" placeholder="Add a comment">
+                    <button class="comment-btn">post</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+</div>
+
+    {% endfor %}
+
+
+<div class="container mt-5 navigation text-center">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MyStagram {{ post.content }}!{% endblock %}
+
+{% block body %}
+
+    {% for flash_success in app.flashes('success') %}
+        <div class="alert alert-success" role="alert">{{ flash_success }}</div>
+    {% endfor %}
+
+    <div class="container">
+        <section class="main">
+            <div class="wrapper">
+                <div class="left-col">
+                    <br>
+
+                    <div class="post">
+                        <div class="info">
+                            <div class="user">
+                                <a href="{{ path('profile', {'id': post.user.id}) }}"> <p class="username">{{ post.user.nickname }}</p></a>
+                                {#
+                                <p class="username">{{ post.user.nickname }}</p>
+                                #}
+                            </div>
+                            <img src="{{ asset('assets/img/option.PNG') }}" class="options" alt="">
+                        </div>
+
+                        <img src="/images/hosting/{{ post.image }}" class="post-image" alt="">
+                        <div class="post-content">
+                            <div class="reaction-wrapper">
+                                <a  href="{{ path('app_like_post', {id: post.id }) }}"><img src="{{ asset('assets/img/like.PNG') }}" class="icon" alt=""></a>
+                                <img src="{{ asset('assets/img/comment.PNG') }}" class="icon" alt="">
+                                <img src="{{ asset('assets/img/send.PNG') }}" class="icon" alt="">
+                                <img src="{{ asset('assets/img/save.PNG') }}" class="save icon" alt="">
+                            </div>
+                            <p class="likes">{{ post.likes|length > 0 ? post.likes|length : 0 }} likes</p>
+                            <p class="description"><span>{{ post.user.nickname }} </span> {{ post.content }}</p>
+                            <p class="post-time">{{ post.uploadedAt|date('d.m.Y H:i:s') }}</p>
+                        </div>
+                        <div class="ard-body">
+                            <div class="mt-3">
+                                <hr>
+                                {% for comment in comments %}
+
+                                Autor: <a href="{{ path('profile', {'id': comment.author}) }}">{{ comment.author.nickname }}</a>, {{ comment.createdAt|date('d.m.Y H:i:s') }}
+                                <p class="fst-italic wrapper mb-4">{{ comment.content }}
+                                    <br>
+                                    {% if is_granted('EDIT', comment) %}
+                                        <a href="{{ path('app_remove_comment', {'id': comment.id}) }}" class="badge badge-danger">Usuń</a>
+                                        <a>|</a>
+                                        <a href="{{ url('app_edit_comment', {'id': comment.id}) }}" class="badge badge-warning">Edytuj wpis</a>
+                                    {% endif %}
+                                    <hr>
+                                </p>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {{ form_start(form) }}
+                        <div class="mb-3">
+                            <div class="mb-3">
+                                {{ form_label(form.content, null, {'label_attr': {'class': 'form-label'}}) }}
+                                {{ form_widget(form.content, {'attr': {'class': 'form-control'}}) }}
+                                <div class="comment-wrapper">
+                                    <button class="comment-btn">post</button>
+                                </div>
+                            </div>
+                        </div>
+                        {{ form_end(form) }}
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <br><br><br>
+    <br><br><br>
+
+{% endblock %}
