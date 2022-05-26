@@ -1,10 +1,9 @@
 # Instagram
-Instagram clone
 
 
 ## What is it?
 
-It is a simple forum built using PHP + Symfony, MYSQL and HTML + CSS.
+It is a simple instagram clone built using PHP + Symfony, MYSQL and HTML + CSS + Docker.
 
 ## How it works
 
